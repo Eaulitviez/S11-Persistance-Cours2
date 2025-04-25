@@ -12,6 +12,7 @@ public class JeuEspaceV2 : MonoBehaviour
     public int etoiles = 0;
     private int etoilesDebutNiveau;
     public TextMeshProUGUI textEtoiles;
+    public AudioSource sonPortail;
     
     public GameObject fxExplosion;
 
@@ -47,6 +48,7 @@ public class JeuEspaceV2 : MonoBehaviour
 
     public void ChangerScene(int indexScene)
     {
+        sonPortail.Play();
         SceneManager.LoadScene(indexScene);
         // Après que la nouvelle scène est chargé,
         // on garde la valeur de étoiles au début
@@ -77,4 +79,5 @@ public class JeuEspaceV2 : MonoBehaviour
         etoiles = etoilesDebutNiveau;
         textEtoiles.text = etoiles.ToString("0");
     }
+    
 }
